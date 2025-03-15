@@ -114,10 +114,10 @@ const FormModal = ({
   const size = type === "create" ? "w-8 h-8" : "w-7 h-7";
   const bgColor =
     type === "create"
-      ? "bg-lamaYellow"
+      ? "bg-harmonyYellow"
       : type === "update"
-      ? "bg-lamaSky"
-      : "bg-lamaPurple";
+      ? "bg-harmonySky"
+      : "bg-harmonyPurple";
 
   const [open, setOpen] = useState(false);
 
@@ -148,7 +148,9 @@ const FormModal = ({
         </button>
       </form>
     ) : type === "create" || type === "update" ? (
-      forms[table](setOpen, type, data, relatedData)
+      forms[table] ? 
+        forms[table](setOpen, type, data, relatedData) : 
+        <div className="p-4">Form for {table} not implemented yet</div>
     ) : (
       "Form not found!"
     );
@@ -159,6 +161,7 @@ const FormModal = ({
       <button
         className={`${size} flex items-center justify-center rounded-full ${bgColor}`}
         onClick={() => setOpen(true)}
+        aria-label={`${type} ${table}`}
       >
         <Image src={`/${type}.png`} alt="" width={16} height={16} />
       </button>
