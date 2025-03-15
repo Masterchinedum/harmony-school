@@ -128,7 +128,7 @@ const AnnouncementListPage = async ({
             <button title="Filter announcements" className="w-8 h-8 flex items-center justify-center rounded-full bg-harmonyYellow">
               <Image src="/filter.png" alt="Filter" width={14} height={14} />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-harmonyYellow">
+            <button title="Sort announcements" className="w-8 h-8 flex items-center justify-center rounded-full bg-harmonyYellow">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
             {role === "admin" && (
