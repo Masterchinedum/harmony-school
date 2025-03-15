@@ -81,8 +81,8 @@ const StudentListPage = async ({
       <td>
         <div className="flex items-center gap-2">
           <Link href={`/list/students/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-harmonySky">
-              <Image src="/view.png" alt="" width={16} height={16} />
+            <button title="View student details" className="w-7 h-7 flex items-center justify-center rounded-full bg-harmonySky">
+              <Image src="/view.png" alt="View" width={16} height={16} />
             </button>
           </Link>
           {role === "admin" && (
@@ -147,10 +147,10 @@ const StudentListPage = async ({
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-harmonyYellow">
+            <button title="Filter students" className="w-8 h-8 flex items-center justify-center rounded-full bg-harmonyYellow">
               <Image src="/filter.png" alt="" width={14} height={14} />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-harmonyYellow">
+            <button title="Sort students" className="w-8 h-8 flex items-center justify-center rounded-full bg-harmonyYellow">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
             {role === "admin" && (
