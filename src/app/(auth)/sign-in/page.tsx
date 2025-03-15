@@ -1,3 +1,4 @@
+//src/app/[[...sign-in]].tsx
 "use client";
 
 import * as Clerk from "@clerk/elements/common";
@@ -9,7 +10,6 @@ import { useEffect } from "react";
 
 const LoginPage = () => {
   const { isLoaded, isSignedIn, user } = useUser();
-
   const router = useRouter();
 
   useEffect(() => {
