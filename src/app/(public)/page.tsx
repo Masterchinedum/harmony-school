@@ -3,6 +3,8 @@ import Link from 'next/link';
 import AboutSection from '@/components/public/AboutSection';
 import ProgramsSection from '@/components/public/ProgramsSection';
 import FeaturesSection from '@/components/public/FeaturesSection';
+import ContactPreview from '@/components/public/ContactPreview';
+import EnrollmentCTA from '@/components/public/EnrollmentCTA';
 
 export default function HomePage() {
   return (
@@ -65,13 +67,31 @@ export default function HomePage() {
       {/* About Section */}
       <AboutSection />
       
-      {/* Programs Section */}
-      <ProgramsSection />
+      {/* Programs Section with wave separator */}
+      <div className="bg-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" className="w-full">
+          <path 
+            fill="#f9fafb" 
+            fillOpacity="1" 
+            d="M0,32L80,42.7C160,53,320,75,480,69.3C640,64,800,32,960,21.3C1120,11,1280,21,1360,26.7L1440,32L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"
+          ></path>
+        </svg>
+        <ProgramsSection />
+      </div>
       
-      {/* Features & Achievements Section */}
-      <FeaturesSection />
+      {/* Features & Achievements Section with angled separator */}
+      <div className="relative">
+        <div className="absolute top-0 left-0 right-0 h-16 bg-gray-50 transform -skew-y-2 origin-top-right z-0"></div>
+        <div className="relative z-10">
+          <FeaturesSection />
+        </div>
+      </div>
       
-      {/* More sections will be added in subsequent phases */}
+      {/* Enrollment CTA Section */}
+      <EnrollmentCTA />
+      
+      {/* Contact Preview Section */}
+      <ContactPreview />
     </>
   );
 }
