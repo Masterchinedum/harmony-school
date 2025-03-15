@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import AboutSection from '@/components/public/AboutSection';
+import ProgramsSection from '@/components/public/ProgramsSection';
+import FeaturesSection from '@/components/public/FeaturesSection';
 
 export default function HomePage() {
   return (
@@ -63,7 +65,13 @@ export default function HomePage() {
       {/* About Section */}
       <AboutSection />
       
-      {/* Other sections will be added in subsequent phases */}
+      {/* Programs Section */}
+      <ProgramsSection />
+      
+      {/* Features & Achievements Section */}
+      <FeaturesSection />
+      
+      {/* More sections will be added in subsequent phases */}
     </>
   );
 }
