@@ -5,7 +5,7 @@ const PublicFooter = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-foreground text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* School Info */}
@@ -14,12 +14,12 @@ const PublicFooter = () => {
               <Image src="/logo.png" alt="Harmony Unique School Logo" width={40} height={40} />
               <h2 className="text-xl font-bold ml-2">Harmony Unique School</h2>
             </div>
-            <p className="text-gray-400 mb-4">
+            <p className="text-muted-foreground mb-4">
               Providing quality education for nursery, primary and secondary students in 
               Ewu-Urhobo, Ughelli south LGA, Delta state Nigeria.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="#" className="text-muted-foreground hover:text-primary-foreground">
                 <span className="sr-only">Facebook</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -29,7 +29,7 @@ const PublicFooter = () => {
                   />
                 </svg>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="#" className="text-muted-foreground hover:text-primary-foreground">
                 <span className="sr-only">Instagram</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -39,7 +39,7 @@ const PublicFooter = () => {
                   />
                 </svg>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="#" className="text-muted-foreground hover:text-primary-foreground">
                 <span className="sr-only">Twitter</span>
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -53,22 +53,22 @@ const PublicFooter = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-white">Home</Link>
+                <Link href="/" className="text-muted-foreground hover:text-primary-foreground">Home</Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white">About Us</Link>
+                <Link href="/about" className="text-muted-foreground hover:text-primary-foreground">About Us</Link>
               </li>
               <li>
-                <Link href="/programs" className="text-gray-400 hover:text-white">Programs</Link>
+                <Link href="/programs" className="text-muted-foreground hover:text-primary-foreground">Programs</Link>
               </li>
               <li>
-                <Link href="/admissions" className="text-gray-400 hover:text-white">Admissions</Link>
+                <Link href="/admissions" className="text-muted-foreground hover:text-primary-foreground">Admissions</Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white">Contact Us</Link>
+                <Link href="/contact" className="text-muted-foreground hover:text-primary-foreground">Contact Us</Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-gray-400 hover:text-white">Privacy Policy</Link>
+                <Link href="/privacy" className="text-muted-foreground hover:text-primary-foreground">Privacy Policy</Link>
               </li>
             </ul>
           </div>
@@ -78,13 +78,13 @@ const PublicFooter = () => {
             <h3 className="text-lg font-semibold mb-4">Our Programs</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/programs#nursery" className="text-gray-400 hover:text-white">Nursery School</Link>
+                <Link href="/programs#nursery" className="text-muted-foreground hover:text-primary-foreground">Nursery School</Link>
               </li>
               <li>
-                <Link href="/programs#primary" className="text-gray-400 hover:text-white">Primary School</Link>
+                <Link href="/programs#primary" className="text-muted-foreground hover:text-primary-foreground">Primary School</Link>
               </li>
               <li>
-                <Link href="/programs#secondary" className="text-gray-400 hover:text-white">Secondary School</Link>
+                <Link href="/programs#secondary" className="text-muted-foreground hover:text-primary-foreground">Secondary School</Link>
               </li>
             </ul>
           </div>
@@ -92,22 +92,22 @@ const PublicFooter = () => {
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start">
-                <svg className="h-6 w-6 mr-2 text-harmonyPurpleLight" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span>Ewu-Urhobo, Ughelli south LGA, Delta state, Nigeria</span>
               </li>
               <li className="flex items-center">
-                <svg className="h-6 w-6 mr-2 text-harmonyPurpleLight" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <span>info@harmonyuniqueschool.com</span>
               </li>
               <li className="flex items-center">
-                <svg className="h-6 w-6 mr-2 text-harmonyPurpleLight" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <span>+234 123 456 7890</span>
@@ -116,8 +116,8 @@ const PublicFooter = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <p className="text-gray-400 text-center">
+        <div className="border-t border-border/20 mt-12 pt-8">
+          <p className="text-muted-foreground text-center">
             &copy; {currentYear} Harmony Unique School. All rights reserved.
           </p>
         </div>
