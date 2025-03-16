@@ -5,7 +5,7 @@ export default function EnrollmentCTA() {
   return (
     <section className="relative py-20">
       {/* Background color overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-harmonySky to-harmonyPurple opacity-90 z-0"></div>
+      <div className="absolute inset-0 bg-primary/90 z-0"></div>
       
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10 z-0" 
@@ -16,52 +16,52 @@ export default function EnrollmentCTA() {
       
       {/* Content */}
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="max-w-4xl mx-auto text-center text-white mb-12">
+        <div className="max-w-4xl mx-auto text-center text-primary-foreground mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Begin Your Child&apos;s Journey at Harmony Unique School</h2>
-          <p className="text-lg md:text-xl opacity-90 mb-8">
+          <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
             Give your child the gift of quality education in a nurturing environment where they can discover their potential and build a strong foundation for their future.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white bg-opacity-20 backdrop-blur-sm p-6 rounded-lg border border-white border-opacity-20 shadow-lg">
               <div className="rounded-full bg-white p-3 inline-flex mb-4">
-                <DocumentTextIcon className="h-8 w-8 text-harmonyPurple" />
+                <DocumentTextIcon className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Apply Now</h3>
-              <p className="opacity-80 mb-4">Start your application process for the upcoming academic session.</p>
+              <h3 className="text-xl font-bold mb-2 text-white">Apply Now</h3>
+              <p className="text-white text-opacity-80 mb-4">Start your application process for the upcoming academic session.</p>
               <Link 
                 href="/admissions" 
-                className="inline-flex items-center text-white hover:underline"
+                className="inline-flex items-center bg-white text-primary px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300 font-medium"
               >
                 Begin Application <ArrowRightIcon className="h-4 w-4 ml-1" />
               </Link>
             </div>
             
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white bg-opacity-20 backdrop-blur-sm p-6 rounded-lg border border-white border-opacity-20 shadow-lg">
               <div className="rounded-full bg-white p-3 inline-flex mb-4">
-                <CalendarIcon className="h-8 w-8 text-harmonyPurple" />
+                <CalendarIcon className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Schedule a Visit</h3>
-              <p className="opacity-80 mb-4">Tour our campus and meet with our administrators and teachers.</p>
+              <h3 className="text-xl font-bold mb-2 text-white">Schedule a Visit</h3>
+              <p className="text-white text-opacity-80 mb-4">Tour our campus and meet with our administrators and teachers.</p>
               <Link 
                 href="/contact#visit" 
-                className="inline-flex items-center text-white hover:underline"
+                className="inline-flex items-center bg-white text-primary px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300 font-medium"
               >
                 Book a Tour <ArrowRightIcon className="h-4 w-4 ml-1" />
               </Link>
             </div>
             
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-lg">
+            <div className="bg-white bg-opacity-20 backdrop-blur-sm p-6 rounded-lg border border-white border-opacity-20 shadow-lg">
               <div className="rounded-full bg-white p-3 inline-flex mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8 text-harmonyPurple">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8 text-primary">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2">Learn More</h3>
-              <p className="opacity-80 mb-4">Get detailed information about our admission requirements and programs.</p>
+              <h3 className="text-xl font-bold mb-2 text-white">Learn More</h3>
+              <p className="text-white text-opacity-80 mb-4">Get detailed information about our admission requirements and programs.</p>
               <Link 
                 href="/programs" 
-                className="inline-flex items-center text-white hover:underline"
+                className="inline-flex items-center bg-white text-primary px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300 font-medium"
               >
                 Explore Programs <ArrowRightIcon className="h-4 w-4 ml-1" />
               </Link>
@@ -71,7 +71,7 @@ export default function EnrollmentCTA() {
           <div className="mt-10">
             <Link 
               href="/admissions"
-              className="bg-white text-harmonyPurple hover:bg-gray-100 font-bold py-4 px-10 rounded-md text-lg transition duration-300 inline-block"
+              className="bg-white text-primary hover:bg-opacity-90 font-bold py-4 px-10 rounded-md text-lg transition duration-300 inline-block shadow-lg border border-white border-opacity-20"
             >
               Enroll Today
             </Link>
