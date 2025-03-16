@@ -15,7 +15,7 @@ export default function SignInPage() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   
-  const { signIn, setActive } = useSignIn();
+  const { signIn, setActive, isLoaded } = useSignIn();
   const router = useRouter();
   
   const handleSubmit = async (e: React.FormEvent) => {
@@ -23,6 +23,11 @@ export default function SignInPage() {
     
     if (!email || !password) {
       setError("Please enter both email and password");
+      return;
+    }
+    
+    if (!isLoaded || !signIn) {
+      setError("Authentication system is still loading. Please try again.");
       return;
     }
     
