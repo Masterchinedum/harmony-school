@@ -44,14 +44,15 @@ export default function SignInPage() {
       if (result.status === "complete") {
         await setActive({ session: result.createdSessionId });
         
-        // Get the user's role from the session
-        const { user } = await signIn.create({
-          identifier: email,
-          password,
-        });
+        // The role should be available in the session claims
+        // We can redirect based on role from the user's metadata
+        // No need to call signIn.create() again
         
-        // Get the role from user metadata
-        const role = user?.publicMetadata?.role || 'student';
+        // Get the user's metadata from the result
+        const role = result.createdSessionId ? 
+          // Try to get role from metadata or default to 'student'
+          (result.userData?.publicMetadata?.role as string || 'student') : 
+          'student';
         
         // Redirect based on role
         router.push(`/${role}`);
