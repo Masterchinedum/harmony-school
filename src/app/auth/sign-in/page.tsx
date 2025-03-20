@@ -43,7 +43,18 @@ export default function SignInPage() {
       
       if (result.status === "complete") {
         await setActive({ session: result.createdSessionId });
-        router.push("/dashboard");
+        
+        // Get the user's role from the session
+        const { user } = await signIn.create({
+          identifier: email,
+          password,
+        });
+        
+        // Get the role from user metadata
+        const role = user?.publicMetadata?.role || 'student';
+        
+        // Redirect based on role
+        router.push(`/${role}`);
       } else {
         // Handle additional verification steps if needed
         console.log(result);
