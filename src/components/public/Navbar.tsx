@@ -3,9 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useAuth, useUser } from "@clerk/nextjs";
 
 const PublicNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isSignedIn } = useAuth();
+  const { user } = useUser();
+  
+  // Extract role from user metadata or use 'student' as default
+  const role = user?.publicMetadata?.role as string || 'student';
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -43,12 +49,23 @@ const PublicNavbar = () => {
             <Link href="/contact" className="text-foreground hover:text-primary font-medium">
               Contact
             </Link>
-            <Link
-              href="/auth/sign-in"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-md font-medium"
-            >
-              Sign In
-            </Link>
+            
+            {/* Conditional rendering based on auth state */}
+            {isSignedIn ? (
+              <Link
+                href={`/${role}`}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-md font-medium"
+              >
+                Dashboard
+              </Link>
+            ) : (
+              <Link
+                href="/auth/sign-in"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-md font-medium"
+              >
+                Sign In
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -128,13 +145,25 @@ const PublicNavbar = () => {
             >
               Contact
             </Link>
-            <Link
-              href="/auth/sign-in"
-              onClick={toggleMenu}
-              className="block px-3 py-2 rounded-md text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              Sign In
-            </Link>
+            
+            {/* Conditional rendering for mobile menu */}
+            {isSignedIn ? (
+              <Link
+                href={`/${role}`}
+                onClick={toggleMenu}
+                className="block px-3 py-2 rounded-md text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                Dashboard
+              </Link>
+            ) : (
+              <Link
+                href="/auth/sign-in"
+                onClick={toggleMenu}
+                className="block px-3 py-2 rounded-md text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                Sign In
+              </Link>
+            )}
           </div>
         </div>
       )}
