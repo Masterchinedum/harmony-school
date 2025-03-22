@@ -44,18 +44,26 @@ export default function SignInPage() {
       if (result.status === "complete") {
         await setActive({ session: result.createdSessionId });
         
-        // The role should be available in the session claims
-        // We can redirect based on role from the user's metadata
-        // No need to call signIn.create() again
-        
-        // Get the user's metadata from the result
-        const role = result.createdSessionId ? 
-          // Try to get role from metadata or default to 'student'
-          (result.userData?.publicMetadata?.role as string || 'student') : 
-          'student';
-        
-        // Redirect based on role
-        router.push(`/${role}`);
+        try {
+          // Use the user object from result, which should have the role
+          // Type assertion needed since TypeScript doesn't recognize the structure
+          type UserMetadata = {
+            publicMetadata?: {
+              role?: string
+            }
+          };
+          
+          // Get role from the publicMetadata or default to student
+          const userData = result.userData as UserMetadata;
+          const role = userData?.publicMetadata?.role || 'student';
+          
+          // Redirect to role-specific page
+          router.push(`/${role}`);
+        } catch (error) {
+          console.error("Error parsing user role:", error);
+          // Fallback to student role if there's an error
+          router.push('/student');
+        }
       } else {
         // Handle additional verification steps if needed
         console.log(result);
